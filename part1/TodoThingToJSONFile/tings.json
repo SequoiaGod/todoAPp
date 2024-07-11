@@ -1,0 +1,47 @@
+[
+  {
+    "Name": "apple",
+    "Price": 3.3,
+    "Volume": 11
+  },
+  {
+    "Name": "peach",
+    "Price": 4.3,
+    "Volume": 22
+  },
+  {
+    "Name": "melon",
+    "Price": 23.3,
+    "Volume": 33
+  },
+  {
+    "Name": "grapefruit",
+    "Price": 34.3,
+    "Volume": 44
+  },
+  {
+    "Name": "mango",
+    "Price": 32.3,
+    "Volume": 55
+  },
+  {
+    "Name": "orange",
+    "Price": 333,
+    "Volume": 66
+  },
+  {
+    "Name": "strawberry",
+    "Price": 98.3,
+    "Volume": 778
+  },
+  {
+    "Name": "kiwi fruit",
+    "Price": 35,
+    "Volume": 88
+  },
+  {
+    "Name": "blueberry",
+    "Price": 233.3,
+    "Volume": 99
+  }
+]

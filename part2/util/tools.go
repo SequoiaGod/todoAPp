@@ -5,18 +5,19 @@ import (
 	"fmt"
 )
 
-var ToDoArr = []ToDOThing{
-	{Id: 1, Name: "Buy computer", Period: "40m", Status: "Undone"},
-	{Id: 2, Name: "Buy banana", Period: "20m", Status: "done"},
-	{Id: 3, Name: "Buy peach", Period: "20m", Status: "done"},
-	{Id: 4, Name: "Buy melon", Period: "10m", Status: "Undone"},
-}
+var ToDoArr = make([]ToDOThing, 0)
 
 type ToDOThing struct {
 	Id     int    `json:"Id"`
 	Name   string `json:"Name"`
 	Period string `json:"TimeNeeded"`
 	Status string `json:"Status"`
+}
+type Message struct {
+	Command  string
+	Todo     ToDOThing
+	Id       int
+	Response chan<- string
 }
 
 func ListToDo(strArr ...ToDOThing) {
@@ -26,4 +27,25 @@ func ListToDo(strArr ...ToDOThing) {
 		return
 	}
 	fmt.Println(string(marshal))
+}
+
+func RemoveItem(id int) ToDOThing {
+	for i := 0; i < len(ToDoArr); i++ {
+		if ToDoArr[i].Id == id {
+			temp := ToDoArr[i]
+			ToDoArr = append(ToDoArr[:i], ToDoArr[i+1:]...)
+			return temp
+		}
+	}
+	return ToDOThing{}
+}
+
+func UpdateItem(todo ToDOThing) {
+	for i := 0; i < len(ToDoArr); i++ {
+		if ToDoArr[i].Id == todo.Id {
+			ToDoArr[i] = todo
+			return
+		}
+	}
+	ToDoArr = append(ToDoArr, todo)
 }

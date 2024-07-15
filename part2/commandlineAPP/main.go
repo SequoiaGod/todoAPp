@@ -13,8 +13,7 @@ import (
 )
 
 var (
-	hasCommand  = make(chan string, 1)
-	commandFlag = make(chan struct{})
+	hasCommand = make(chan string, 1)
 )
 
 func main() {

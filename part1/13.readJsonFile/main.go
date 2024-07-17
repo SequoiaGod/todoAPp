@@ -22,14 +22,6 @@ func main() {
 
 	var todos []Item
 	err = json.NewDecoder(file).Decode(&todos)
-	//bytes, err := io.ReadAll(file)
-	//if err != nil {
-	//	log.Fatalf("Failed to read file: %s", err)
-	//}
-	//err = json.Unmarshal(bytes, &todos)
-	//if err != nil {
-	//	log.Fatalf("Failed to unmarshal JSON: %s", err)
-	//}
 
 	for _, todo := range todos {
 		fmt.Printf("Name: %s, Price: %f, Volume: %d\n", todo.Name, todo.Price, todo.Volume)

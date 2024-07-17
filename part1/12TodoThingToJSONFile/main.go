@@ -14,7 +14,7 @@ type Item struct {
 
 func ListToDo(itemArr ...Item) {
 	fmt.Println(itemArr)
-	f, err := os.Create("./TodoThingToJSONFile/tings.json")
+	f, err := os.Create("./part1/12TodoThingToJSONFile/tings.json")
 	if err != nil {
 		panic(err)
 	}
